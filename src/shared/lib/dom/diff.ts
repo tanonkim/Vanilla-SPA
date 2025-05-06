@@ -1,17 +1,14 @@
 import { VNode } from "../jsx/jsx-runtime/type";
 import { createElement } from "./client";
 
-function diffTextVDOM(newVDOM: VNode, currentVDOM: VNode) {
-  if (typeof newVDOM === "number" && typeof currentVDOM === "string")
-    return true;
-  if (typeof newVDOM === "string" && typeof currentVDOM === "number")
-    return true;
-  if (typeof newVDOM === "number" && typeof currentVDOM === "number")
-    return true;
-  if (typeof newVDOM === "string" && typeof currentVDOM === "string")
-    return true;
+function isTextVDOM(v: VNode) {
+  return typeof v === "string" || typeof v === "number";
+}
 
-  if (newVDOM === currentVDOM) return false;
+function diffTextVDOM(newVDOM: VNode, currentVDOM: VNode) {
+  return (
+    isTextVDOM(newVDOM) && isTextVDOM(currentVDOM) && newVDOM !== currentVDOM
+  );
 }
 
 export function updateElement(
@@ -82,7 +79,7 @@ export function updateElement(
       currentVDOM.children[i],
       removeIndex ?? i
     );
-    removeIndex = _removeIndex
+    removeIndex = _removeIndex;
   }
 }
 
