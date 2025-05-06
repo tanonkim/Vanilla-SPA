@@ -1,13 +1,7 @@
 import { pathToRegex } from "@/shared/utils/PathRegex";
 import { Component } from "../dom/component";
 import { render } from "../dom";
-
-export type Route = {
-  path: string;
-  element?: Component;
-  errorElement?: Component;
-  children?: Route[];
-};
+import { Route } from "./types";
 
 const spaRouter = () => {
   let pageParams: any;

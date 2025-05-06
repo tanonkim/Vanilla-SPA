@@ -7,7 +7,7 @@ export function HomePage() {
       </a>
       &nbsp;&nbsp;
       <a data-link href="/store">
-        go blog
+        go store
       </a>
     </div>
   );
