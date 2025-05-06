@@ -1,6 +1,5 @@
 import { pathToRegex } from "@/shared/utils/PathRegex";
 import { Component } from "../dom/component";
-import { createElement } from "../dom/client";
 import { render } from "../dom";
 
 export type Route = {
