@@ -1,6 +1,7 @@
 import { pathToRegex } from "@/shared/utils/PathRegex";
 import { Component } from "../dom/component";
 import { createElement } from "../dom/client";
+import { render } from "../dom";
 
 export type Route = {
   path: string;
@@ -56,10 +57,7 @@ const spaRouter = () => {
     } else {
       pageParams = params;
       if (routeInfo.root) {
-        while (routeInfo.root.firstChild) {
-          routeInfo.root.removeChild(routeInfo.root.firstChild);
-        }
-        routeInfo.root.appendChild(createElement(Component()));
+        render(routeInfo.root, Component);
       } else {
         throw new Error("root element is empty");
       }

@@ -1,5 +1,5 @@
 import { HomePage, StoreDetailPage, StorePage } from "@/pages";
-import { NotFoundPage } from "@/shared/not-found/NotFound";
+import { NotFoundPage } from "@/pages/ui/NotFound";
 
 export const routes = [
   {
