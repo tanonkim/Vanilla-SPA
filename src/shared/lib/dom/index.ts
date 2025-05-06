@@ -8,19 +8,19 @@ function domRenderer() {
     currentVDOM: null,
   };
 
-  const _render = () => {
+  const _render = async () => {
     const { $root, currentVDOM, component } = renderInfo;
     if (!$root || !component) return;
 
-    const newVDOM = component();
+    const newVDOM = await component();
     updateElement($root, newVDOM, currentVDOM);
     renderInfo.currentVDOM = newVDOM;
   };
 
-  const render = (root: HTMLElement, component: Component) => {
+  const render = async (root: HTMLElement, component: Component) => {
     renderInfo.$root = root;
     renderInfo.component = component;
-    _render();
+    await _render();
   };
   return { render };
 }
