@@ -91,7 +91,7 @@ export async function StorePage() {
       <a data-link href="/">
         메인 홈페이지 돌아가기
       </a>
-      <div id="product-list"></div>
+      <div id="product-list" />
       <div className="h-[20px] pb-10" id="load-more">
         <p className="bg-[#111111]">Loading more...</p>
       </div>

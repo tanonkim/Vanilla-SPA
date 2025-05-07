@@ -13,6 +13,7 @@ function domRenderer() {
     if (!$root || !component) return;
 
     const newVDOM = await component();
+
     updateElement($root, newVDOM, currentVDOM);
     renderInfo.currentVDOM = newVDOM;
   };

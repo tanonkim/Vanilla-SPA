@@ -7,19 +7,19 @@ const getRandomPrice = () => {
   return Math.floor(Math.random() * ((max - min) / step + 1)) * step + min;
 };
 
-const generateMockProducts = (startId: number) =>
-  Array.from({ length: 8 }).map((_, index) => ({
+const generateMockProducts = (startId: number, length: number) =>
+  Array.from({ length }).map((_, index) => ({
     id: startId + index,
     name: `product ${startId + index}`,
     image: `https://picsum.photos/200/200?random=${startId + index}`,
     price: getRandomPrice(),
   }));
 
-const firstPageMockProducts = generateMockProducts(1);
-const secondPageMockProducts = generateMockProducts(9);
-const thridPageMockProducts = generateMockProducts(17);
-const fourthPageMockProducts = generateMockProducts(25);
-const fifthPageMockProducts = generateMockProducts(33);
+const firstPageMockProducts = generateMockProducts(1, 8);
+const secondPageMockProducts = generateMockProducts(9, 8);
+const thridPageMockProducts = generateMockProducts(17, 8);
+const fourthPageMockProducts = generateMockProducts(25, 8);
+const fifthPageMockProducts = generateMockProducts(33, 8);
 
 export const handlers = [
   http.get("/api/products", ({ request }) => {
@@ -34,4 +34,9 @@ export const handlers = [
 
     return HttpResponse.json([]);
   }),
+
+  http.get("/api/product/:id", ({ params }) => {
+    const { id = "1" } = params;
+    return HttpResponse.json(generateMockProducts(+id, 1));
+  }),``
 ];
