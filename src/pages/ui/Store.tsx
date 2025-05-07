@@ -28,9 +28,10 @@ export async function StorePage() {
     if (!container) return;
 
     data.forEach((item) => {
-      const div = document.createElement("div");
-      div.className =
+      const anchor = document.createElement("a");
+      anchor.className =
         "flex items-center gap-10 my-3 py-2 border-b-[1px] border-[#000000]";
+      anchor.href = `/store/${item.id}`;
 
       const imgDiv = document.createElement("div");
       const img = document.createElement("img");
@@ -49,10 +50,10 @@ export async function StorePage() {
       textDiv.appendChild(nameDiv);
       textDiv.appendChild(priceDiv);
 
-      div.appendChild(imgDiv);
-      div.appendChild(textDiv);
+      anchor.appendChild(imgDiv);
+      anchor.appendChild(textDiv);
 
-      container.appendChild(div);
+      container.appendChild(anchor);
     });
   };
 
