@@ -1,23 +1,19 @@
-export async function HomePage() {
-  const response = await fetch("/api/products");
-
-  if (!response.ok) {
-    console.error("error 발생");
-  }
-
-  const data = await response.json();
-  console.log(data);
-
+export function HomePage() {
   return (
-    <div>
-      <h2>HomePage</h2>
-      <a data-link href="/store/1">
-        go product 1
-      </a>
-      &nbsp;&nbsp;
-      <a data-link href="/store">
-        go store
-      </a>
+    <div className="p-10">
+      <h2 className="text-[40px]">HomePage</h2>
+      <div className="flex justify-between mt-10">
+        <div>
+          <a data-link href="/new" className="p-5 bg-[#f57369]">
+            최신상품 바로가기
+          </a>
+        </div>
+        <div>
+          <a data-link href="/store" className="p-5 bg-[#7e8ee6]">
+            스토어 이동하기
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

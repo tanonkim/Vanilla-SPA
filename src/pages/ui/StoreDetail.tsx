@@ -2,6 +2,7 @@ import { history } from "@/shared/lib/router";
 
 export function StoreDetailPage() {
   const params = history.getPageParams();
+
   return (
     <div>
       <h2>PostPage {params}</h2>

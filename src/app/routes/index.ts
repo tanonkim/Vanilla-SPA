@@ -1,4 +1,4 @@
-import { HomePage, StoreDetailPage, StorePage } from "@/pages";
+import { HomePage, NewProduct, StoreDetailPage, StorePage } from "@/pages";
 import { NotFoundPage } from "@/pages/ui/NotFound";
 
 export const routes = [
@@ -7,6 +7,10 @@ export const routes = [
     element: HomePage,
     errorElement: NotFoundPage,
     children: [
+      {
+        path: "new",
+        element: NewProduct,
+      },
       {
         path: "store",
         element: StorePage,
