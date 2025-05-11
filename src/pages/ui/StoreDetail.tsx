@@ -53,9 +53,7 @@ export async function StoreDetailPage() {
     <div>
       <div>
         <h2>PostPage {id}</h2>
-        <a data-link href="/">
-          go home
-        </a>
+        <a href="/">go home</a>
         &nbsp;&nbsp;
         <a data-link href="/store">
           go store
