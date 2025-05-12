@@ -1,16 +1,6 @@
 import { VNode } from "../jsx/jsx-runtime/type";
 import { createElement } from "./client";
 
-function isTextVDOM(v: VNode) {
-  return typeof v === "string" || typeof v === "number";
-}
-
-function diffTextVDOM(newVDOM: VNode, currentVDOM: VNode) {
-  return (
-    isTextVDOM(newVDOM) && isTextVDOM(currentVDOM) && newVDOM !== currentVDOM
-  );
-}
-
 export function updateElement(
   parent: Element,
   newVDOM?: VNode | null,
@@ -103,4 +93,14 @@ function updateAttribute(
       target.removeAttribute(attr);
     }
   }
+}
+
+function isTextVDOM(v: VNode) {
+  return typeof v === "string" || typeof v === "number";
+}
+
+function diffTextVDOM(newVDOM: VNode, currentVDOM: VNode) {
+  return (
+    isTextVDOM(newVDOM) && isTextVDOM(currentVDOM) && newVDOM !== currentVDOM
+  );
 }
