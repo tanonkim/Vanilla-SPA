@@ -10,7 +10,6 @@ export async function StoreDetailPage() {
   }
 
   const data = await response.json();
-  console.log(data);
 
   if (!data) return;
 

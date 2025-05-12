@@ -21,7 +21,7 @@ const spaRouter = () => {
     function traverse(
       routes: Route[],
       segments: string[],
-      errorComponent?: Component,
+      errorComponent?: Component
     ) {
       for (const route of routes) {
         const { path, children, element, errorElement } = route;
@@ -34,7 +34,7 @@ const spaRouter = () => {
           return traverse(
             children,
             segments.slice(1),
-            errorElement ?? errorComponent,
+            errorElement ?? errorComponent
           );
         }
       }
