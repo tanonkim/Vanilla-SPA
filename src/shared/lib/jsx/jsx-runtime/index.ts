@@ -4,6 +4,11 @@ import { VDOM, VNode } from "./type";
  * @fileoverview jsx 팩토리 함수 생성
  * @description
  * - <div>Hello World</div> 형태의 jsx문법 -> 트랜스파일링 -> h('div',null,['Hello World'])
+ * - {
+  type: "div",
+  props: null,
+  children: ["Hello World!!!"]
+}
  */
 type Component = (props?: Record<string, any>) => VDOM;
 
