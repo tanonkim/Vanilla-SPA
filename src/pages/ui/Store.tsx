@@ -32,6 +32,7 @@ export async function StorePage() {
       anchor.className =
         "flex items-center gap-10 my-3 py-2 border-b-[1px] border-[#000000]";
       anchor.href = `/store/${item.id}`;
+      anchor.setAttribute("data-link", "");
 
       const imgDiv = document.createElement("div");
       const img = document.createElement("img");
