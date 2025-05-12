@@ -1,8 +1,6 @@
 import { VNode } from "../jsx/jsx-runtime/type";
 import { createElement } from "./client";
 
-// export type VNode = string | number | VDOM | null | undefined;
-
 describe("createElement test", () => {
   // Given
 
